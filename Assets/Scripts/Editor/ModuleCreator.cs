@@ -97,13 +97,20 @@ public class ModuleCreator : EditorWindow
             return AssetDatabase.AssetPathToGUID(asmpath);
         }
 
-        var viewModel = CreateAssemblyFolder("ViewModel");
-        var model = CreateAssemblyFolder("Model", viewModel);
-        var data = CreateAssemblyFolder("Data", viewModel);
-        var services = CreateAssemblyFolder("Services", data, model, viewModel);
-        var commands = CreateAssemblyFolder("Commands", data, model, viewModel, services);
-        var view = CreateAssemblyFolder("View", commands, viewModel);
-        var test = CreateAssemblyFolder("Test", commands, view, viewModel);
+        var core = AssetDatabase.AssetPathToGUID("Assets/Scripts/Core/Core.asmdef");
+        var data = AssetDatabase.AssetPathToGUID("Assets/Scripts/Data/Data.asmdef");
+        var game = AssetDatabase.AssetPathToGUID("Assets/Scripts/Game/Game.asmdef");
+        var model = AssetDatabase.AssetPathToGUID("Assets/Scripts/Model/Model.asmdef");
+        var view = AssetDatabase.AssetPathToGUID("Assets/Scripts/View/View.asmdef");
+        var viewModel = AssetDatabase.AssetPathToGUID("Assets/Scripts/ViewModel/ViewModel.asmdef");
+
+        var moduleViewModel = CreateAssemblyFolder("ViewModel", core, viewModel);
+        var moduleModel = CreateAssemblyFolder("Model", core, viewModel, moduleViewModel);
+        var moduleData = CreateAssemblyFolder("Data", core, data, moduleViewModel);
+        var services = CreateAssemblyFolder("Services", core, data, moduleData, moduleModel, moduleViewModel);
+        var commands = CreateAssemblyFolder("Commands", core, data, game, model, viewModel, moduleData, moduleModel, moduleViewModel, services);
+        var moduleView = CreateAssemblyFolder("View", core, data, game, view, viewModel, commands, moduleViewModel);
+        var test = CreateAssemblyFolder("Test", commands, moduleView, moduleViewModel);
 
         AssetDatabase.Refresh();
         var rootFolder = AssetDatabase.LoadAssetAtPath(root, typeof(Object));
