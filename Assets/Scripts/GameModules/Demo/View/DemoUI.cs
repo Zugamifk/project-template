@@ -22,7 +22,7 @@ namespace Demo.View
 
         public void ShowNextMessage()
         {
-            Game.Do(new ShowNextMessageCommand());
+            Game.Do(new ShowNextMessage());
         }
     }
 }

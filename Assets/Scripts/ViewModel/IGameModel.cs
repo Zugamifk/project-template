@@ -1,12 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ViewModel
+public interface IGameModel
 {
-    public interface IGameModel
-    {
-        ITimeModel Time { get; }
-        TModel GetModel<TModel>() where TModel : IRegisteredModel;
-    }
+    IInputModel Input { get; }
+    ITimeModel Time { get; }
+    TModel GetModel<TModel>() where TModel : IRegisteredModel;
 }

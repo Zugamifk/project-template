@@ -9,7 +9,7 @@ namespace Demo.View
     {
         void Start()
         {
-            Game.Do(new InitializeDemoCommand());
+            Game.Do(new InitializeDemo());
         }
     }
 }
