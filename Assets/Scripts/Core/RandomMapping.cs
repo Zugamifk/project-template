@@ -1,4 +1,3 @@
-using GluonGui.WorkspaceWindow.Views.WorkspaceExplorer.Explorer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,19 +23,19 @@ public static class RandomMapping
     public static float RandomFloat()
     {
         FillBuffer(4);
-        return BitConverter.ToSingle(_buffer);
+        return BitConverter.ToSingle(_buffer, 0);
     }
 
     public static int RandomInt()
     {
         FillBuffer(4);
-        return BitConverter.ToInt32(_buffer);
+        return BitConverter.ToInt32(_buffer, 0);
     }
 
     public static ulong RandomIntLong()
     {
         FillBuffer(8);
-        return BitConverter.ToUInt64(_buffer);
+        return BitConverter.ToUInt64(_buffer, 0);
     }
 
     static void SetSeed(uint seed)

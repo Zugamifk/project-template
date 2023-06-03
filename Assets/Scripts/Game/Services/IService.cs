@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPrefabReference : IKeyHolder
+public interface IService
 {
-    GameObject Prefab { get; }
+    
 }
