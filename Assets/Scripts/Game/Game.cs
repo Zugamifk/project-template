@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Input;
 
 public class Game : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class Game : MonoBehaviour
         Services.InitializeServices();
 
         InitializeTimeModel();
+        InitializeInput();
     }
 
     private void Update()
@@ -87,6 +89,12 @@ public class Game : MonoBehaviour
 
         AddUpdater(new TimeModelUpdater());
     }
+
+    void InitializeInput()
+    {
+        AddUpdater(new InputUpdater());
+    }
+
 
     #region Editor
 #if UNITY_EDITOR 

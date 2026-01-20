@@ -18,7 +18,7 @@ public class SerializedIdentifiable : Identifiable
         {
             id = GenerateId();
         }
-        Id = id;
+        SetId(id);
     }
 
     Guid GenerateId()

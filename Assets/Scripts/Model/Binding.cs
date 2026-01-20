@@ -5,7 +5,20 @@ using UnityEngine;
 
 public class Binding<T> : IBinding<T>
 {
-    public event Action<T, T> ValueChanged;
+    event Action<T, T> valueChanged;
+
+    public event Action<T, T> ValueChanged
+    {
+        add
+        {
+            valueChanged += value;
+            value?.Invoke(default, Value);
+        }
+        remove
+        {
+            valueChanged -= value;
+        }
+    }
 
     private T value;
     public T Value
@@ -13,12 +26,31 @@ public class Binding<T> : IBinding<T>
         get => value;
         set
         {
-            if (!this.value.Equals(value))
+            if ((value == null) != (this.value == null))
             {
-                T oldValue = this.value;
-                this.value = value;
-                ValueChanged?.Invoke(oldValue, value);
+                SetValue(value);
+            } else if (!this.value.Equals(value))
+            {
+                SetValue(value);
             }
         }
+    }
+
+    void SetValue(T value)
+    {
+        T oldValue = this.value;
+        this.value = value;
+        valueChanged?.Invoke(oldValue, value);
+    }
+
+    public Binding() { }
+    public Binding(T value)
+    {
+        Value = value;
+    }
+
+    public void SetValueWithoutNotify(T value)
+    {
+        this.value = value;
     }
 }

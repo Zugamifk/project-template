@@ -23,19 +23,19 @@ public static class RandomMapping
     public static float RandomFloat()
     {
         FillBuffer(4);
-        return BitConverter.ToSingle(_buffer, 0);
+        return BitConverter.ToSingle(_buffer);
     }
 
     public static int RandomInt()
     {
         FillBuffer(4);
-        return BitConverter.ToInt32(_buffer, 0);
+        return BitConverter.ToInt32(_buffer);
     }
 
     public static ulong RandomIntLong()
     {
         FillBuffer(8);
-        return BitConverter.ToUInt64(_buffer, 0);
+        return BitConverter.ToUInt64(_buffer);
     }
 
     static void SetSeed(uint seed)
