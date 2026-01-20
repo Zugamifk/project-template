@@ -21,7 +21,6 @@ public class ModelViewerWindow : EditorWindow
         var game = Game.EditorModel;
         infoPanes = new InfoPane[]
         {
-            new InputModelPane("Input"),
             new TimeModelPane("Time"),
             new CommandListPane("Commands"),
         };

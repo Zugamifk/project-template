@@ -5,6 +5,5 @@ using UnityEngine;
 
 public partial interface IGameModel
 {
-    IInputModel Input { get; }
     ITimeModel Time { get; }
 }

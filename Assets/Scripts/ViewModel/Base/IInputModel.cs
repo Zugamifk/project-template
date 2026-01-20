@@ -6,6 +6,5 @@ using UnityEngine;
 
 public interface IInputModel
 {
-    IBinding<Guid> CurrentInteractable { get; }
     IBinding<Vector2> ClickPosition { get; }
 }

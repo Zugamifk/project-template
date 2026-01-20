@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Input;
 
 public class Game : MonoBehaviour
 {
@@ -53,7 +52,6 @@ public class Game : MonoBehaviour
         Services.InitializeServices();
 
         InitializeTimeModel();
-        InitializeInput();
     }
 
     private void Update()
@@ -88,11 +86,6 @@ public class Game : MonoBehaviour
         timeModel.RealTime = TimeSpan.FromSeconds(time.TimeOfDay.TotalSeconds / TimeModel.TIME_MULTIPLIER);
 
         AddUpdater(new TimeModelUpdater());
-    }
-
-    void InitializeInput()
-    {
-        AddUpdater(new InputUpdater());
     }
 
 
