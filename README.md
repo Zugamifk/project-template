@@ -23,6 +23,27 @@ Game creates a new empty instance of **GameModel**. This object should contains 
 * In ViewModel, add references to your new IModels to IGameModel.
 * In Model, fill out GameModel with any new Models and fill the IGameModel implementation section.
 
+# Key Scripts
+
+## ICommand
+Commands are the main way to make changes to the GameMode. Each Command encapsulates a singled operation. Commands are run by passing them to Game.Do() to enqueue them. Each frame, Game flushes the command queue and runs each command in sequence. It's common for commands to enqueue further commands.
+
+## IIdentifiable(ViewModel)
+This ViewModel is the base class for all ViewModels containing a Guid. This class is used throughout the core code for managing Identifiable objects, so it all ViewModels with unique Ids should implement it.
+
+## IdentifiableCollection
+This Model implements IIdentifiableCollection and is usually used to aggregate all Models of a given type. It can be iterated over, and Models can be retrieved with their Id as a key.
+
+## Identifiable(Component)
+This component stored an Id to associate one of more Models with a GameOject. Identifiables come in two types:
+* **SerializedIdentifiable** contains a unique serialized ID. It is used for singletons and objects instantiated in scenes.
+* **ModelIdentifiable** is used for GameObjects instantiated at runtime. Their ID is assigned by the object that creates them, usually a **ViewSpawner**.
+## Tracked Transforms
+This component goes on GameObjects with Identifiables attached. It allows finding gameojects using their Id instead of a normal Unity reference. When an Id is assigned to the Identifiable component, the Transform is registered with the TransformService, and can be fetched again using a matching Id.
+
+## ViewSpawner
+This component serves as a base class to spawn GameObjects with a counterpart IdentifiableCollection in Models. It registers events to handle adding to and removing from Model collections, and creating and destroying their GameObjects.
+
 # Assemblies
 Each assembly has a core role in the project, and has a counter part in the submodules.
 

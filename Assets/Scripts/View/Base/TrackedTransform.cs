@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Identifiable))]
 public class TrackedTransform : MonoBehaviour
 {
     void Start()

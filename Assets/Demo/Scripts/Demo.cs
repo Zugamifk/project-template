@@ -11,6 +11,7 @@ namespace Demo
 
         void Start()
         {
+            Game.Do(new StartDemo());
         }
     }
 }
