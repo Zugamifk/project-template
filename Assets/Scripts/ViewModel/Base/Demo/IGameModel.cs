@@ -1,7 +1,8 @@
 using UnityEngine;
+using Demo;
 
 public partial interface IGameModel
 {
-    IUIModel UI { get; }
-    IIdentifiableLookup<ICubeModel> Cubes { get; }
+    IUIModel DemoUI { get; }
+    IIdentifiableLookup<ICubeModel> DemoCubes { get; }
 }

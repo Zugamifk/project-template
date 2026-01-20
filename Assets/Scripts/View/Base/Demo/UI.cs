@@ -10,7 +10,7 @@ namespace Demo
 
         void Start()
         {
-            Game.Model.UI.CurrentMessage.ValueChanged += OnMessageChanged;
+            Game.Model.DemoUI.CurrentMessage.ValueChanged += OnMessageChanged;
         }
 
         void OnMessageChanged(string _, string newMessage)

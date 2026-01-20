@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public interface ICubeModel : IIdentifiable
+namespace Demo
 {
-    float Rotation { get; }
+    public interface ICubeModel : IIdentifiable
+    {
+        float Rotation { get; }
+    }
 }

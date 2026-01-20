@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUIModel
+namespace Demo
 {
-    IBinding<string> CurrentMessage { get; }
+    public interface IUIModel
+    {
+        IBinding<string> CurrentMessage { get; }
+    }
 }

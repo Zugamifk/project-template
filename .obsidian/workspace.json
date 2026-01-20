@@ -185,16 +185,16 @@
   },
   "active": "43109129ce62c9ca",
   "lastOpenFiles": [
-    "Temp/UnityTempFile-a2e6f5b2cbeca384e8d871387a2703f5",
+    "Library/Search/propertyAliases.db_f98254d795fe4a49af2721ad9d9a051c_temp",
+    "Temp/UnityTempFile-443e738c09b844d468c932a98b5eb1c6",
+    "Temp/UnityTempFile-9c54dcfcfc782c5448cbb436e6f6b679",
+    "Temp/UnityTempFile-ed9f8c1faff51f34f88a92b717facbc3",
     "Library/Bee/TundraBuildState.state",
-    "Library/Bee/artifacts/500b0aEDbg.dag/Game.Editor.ModelViewer.ref.dll",
-    "Library/Bee/artifacts/500b0aEDbg.dag/Game.Editor.ModelViewer.pdb",
-    "Library/Bee/artifacts/500b0aEDbg.dag/Game.Editor.ModelViewer.dll",
-    "Temp/ADB-Refresh9245a436ed523d144861f5894b08e566",
-    "Temp/ADB-Refreshd4ba8d99054d7c049912690d2c01779a",
-    "Temp/ADB-Refresh77f9e4e7c9390d54ab3117efa270afdb",
-    "Library/Bee/artifacts/500b0aEDbg.dag/Game.ref.dll",
-    "Library/Bee/artifacts/500b0aEDbg.dag/Game.pdb",
-    "Library/Bee/artifacts/500b0aEDbg.dag/Game.dll"
+    "Library/Bee/artifacts/500b0aEDbg.dag/Model.ref.dll",
+    "Library/Bee/artifacts/500b0aEDbg.dag/Model.pdb",
+    "Library/Bee/artifacts/500b0aEDbg.dag/Model.dll",
+    "Temp/ADB-Refresh2d9b6532b7fa16240a855c72972c3047",
+    "Library/Bee/artifacts/500b0aEDbg.dag/ViewModel.ref.dll",
+    "Library/Bee/artifacts/500b0aEDbg.dag/ViewModel.pdb"
   ]
 }
