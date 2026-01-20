@@ -4,8 +4,11 @@ using UnityEngine;
 
 namespace Demo
 {
-    public class GameTest : MonoBehaviour
+    public class Demo : MonoBehaviour
     {
+        [SerializeField]
+        DataReferences _demoData;
+
         void Start()
         {
         }

@@ -14,9 +14,7 @@ namespace Input
         public InputUpdater()
         {
             stateContext = new();
-            // put start state here
-            // TODO: set to empty state
-            //currentState = new PlayerControlState() { Context = stateContext };
+            currentState = new InactiveState() { Context = stateContext };
         }
 
         public void Update(GameModel model)

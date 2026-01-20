@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public interface IGameModel
+public partial interface IGameModel
 {
-    IInputModel Input { get; }
-    IUIModel UI { get; }
-    ITimeModel Time { get; }
+    // Add IModel references. All should be read only.
+    // For example:
+    // IImplModel Impl { get; }
 }

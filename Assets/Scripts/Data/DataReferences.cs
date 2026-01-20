@@ -6,7 +6,7 @@ using UnityEngine;
 /// This only exists to create a reference to data objects so they get their OnEnable() called
 /// </summary>
 [CreateAssetMenu(menuName="Data/Data References")]
-public class DataReferences : ScriptableObject
+public sealed class DataReferences : ScriptableObject
 {
     [SerializeField]
     ScriptableObject[] _references;

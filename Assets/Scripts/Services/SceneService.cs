@@ -6,25 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Scenes : IService
 {
-    const string BOOT_SCENE_NAME = "Game";
-    const string HUD_SCENE_NAME = "HUD";
+    const string GAME_SCENE_NAME = "Game";
 
     [RuntimeInitializeOnLoadMethod]
-    public static void LoadGameScene()
+    public static void LoadCoreScenes()
     {
-        if(!SceneManager.GetSceneByName(BOOT_SCENE_NAME).isLoaded)
-        {
-            SceneManager.LoadSceneAsync(BOOT_SCENE_NAME, LoadSceneMode.Additive);
-        }
+        LoadIfUnloaded(GAME_SCENE_NAME);
 
-        if (!SceneManager.GetSceneByName(HUD_SCENE_NAME).isLoaded)
-        {
-            SceneManager.LoadSceneAsync(HUD_SCENE_NAME, LoadSceneMode.Additive);
-        }
+        // LOAD ADDITIONAL REQUIRED SCENES HERE
     }
-
-    public void ReloadGame()
+    static void LoadIfUnloaded(string sceneName)
     {
-        // unload all scene, load boot scene
+        if (!SceneManager.GetSceneByName(sceneName).isLoaded)
+        {
+            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        }
     }
 }

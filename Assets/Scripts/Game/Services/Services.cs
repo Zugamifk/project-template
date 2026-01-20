@@ -25,10 +25,10 @@ public static class Services
             }
         }
 
-        var root = GameObject.FindObjectOfType<ViewServiceManager>().transform;
+        var root = GameObject.FindFirstObjectByType<ViewServiceManager>().transform;
         foreach (var type in _monobehaviourServiceTypes)
         {
-            var instance = (IService)GameObject.FindObjectOfType(type);
+            var instance = (IService)GameObject.FindFirstObjectByType(type);
             if (instance != null)
             {
                 AddService(instance);
