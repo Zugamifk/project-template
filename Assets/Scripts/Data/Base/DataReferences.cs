@@ -20,7 +20,11 @@ public sealed class DataReferences : ScriptableObject
 
         foreach(var r in _references)
         {
-            DataService.Register(r);
+            if(r is not IRegisteredData rd)
+            {
+                continue;
+            }
+            DataService.Register(rd);
         }
     }
 

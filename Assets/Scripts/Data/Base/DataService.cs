@@ -4,15 +4,10 @@ using UnityEngine;
 
 public static class DataService
 {
-    static Dictionary<System.Type, ScriptableObject> _dataTypeToCollection = new Dictionary<System.Type, ScriptableObject>();
+    static Dictionary<System.Type, IRegisteredData> _dataTypeToCollection = new Dictionary<System.Type, IRegisteredData>();
 
-    internal static void Register<T>(T collection) where T : ScriptableObject
+    internal static void Register<T>(T collection) where T : IRegisteredData
     {
-        if(collection is not IRegisteredData)
-        {
-            throw new System.InvalidOperationException($"Can't register {collection} of type {typeof(T)}! Must inherit from IRegisteredData.");
-        }
-
         _dataTypeToCollection[collection.GetType()] = collection;
     }
 
@@ -21,7 +16,7 @@ public static class DataService
         _dataTypeToCollection.Clear();
     }
 
-    public static T GetData<T>() where T : ScriptableObject, IRegisteredData
+    public static T GetData<T>() where T : IRegisteredData
     {
         return (T)_dataTypeToCollection[typeof(T)];
     }

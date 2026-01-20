@@ -25,11 +25,17 @@ Game creates a new empty instance of **GameModel**. This object should contains 
 
 # Key Scripts
 
+## IRegisteredData
+Any ScriptableObject asset that is registered with **DataService**, including those added to **DataReferences**, must also implement this interface. IRegisteredData objects do not need to be ScriptableObjects.
+
 ## ICommand
 Commands are the main way to make changes to the GameMode. Each Command encapsulates a singled operation. Commands are run by passing them to Game.Do() to enqueue them. Each frame, Game flushes the command queue and runs each command in sequence. It's common for commands to enqueue further commands.
 
 ## IIdentifiable(ViewModel)
 This ViewModel is the base class for all ViewModels containing a Guid. This class is used throughout the core code for managing Identifiable objects, so it all ViewModels with unique Ids should implement it.
+
+## Binding/IBinding
+Rather than update a View every frame, Bindings can be used to implement an Observable pattern which will call an OnValueChanged event whenever the value changes. View objects can register to this event to listen for updates. IBinding exists in ViewModels and therefore is readonly. Binding exists in Model and implements IBinding, allowing any value that can modify the Model to update the Binding value. Bindings will automatically call the event when the value changes.
 
 ## IdentifiableCollection
 This Model implements IIdentifiableCollection and is usually used to aggregate all Models of a given type. It can be iterated over, and Models can be retrieved with their Id as a key.
