@@ -1,0 +1,11 @@
+﻿<Solution>
+  <Project Path="Core.csproj" />
+  <Project Path="Core.Attributes.Editor.csproj" />
+  <Project Path="Data.csproj" />
+  <Project Path="View.csproj" />
+  <Project Path="ViewModel.csproj" />
+  <Project Path="Game.csproj" />
+  <Project Path="Model.csproj" />
+  <Project Path="Core.Editor.csproj" />
+  <Project Path="View.Editor.csproj" />
+</Solution>
