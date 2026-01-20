@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bde4d0a3ab42922419d86f9872f044b1, type: 3}
-  m_Name: DemoDataReferences
+  m_Script: {fileID: 11500000, guid: 596bc14e81ab9734b90037df249da316, type: 3}
+  m_Name: DemoMessages
   m_EditorClassIdentifier: 
-  _references: []
+  Messages:
+  - Welcome to the Demo
+  - Each click sends a new command to show the next message
+  - Then the messages will loop
+  - This is the last message

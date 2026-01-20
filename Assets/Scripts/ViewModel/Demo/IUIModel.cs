@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IUIModel
 {
-    IBinding<string> CurrentOpenWindow { get; }
+    IBinding<string> CurrentMessage { get; }
 }

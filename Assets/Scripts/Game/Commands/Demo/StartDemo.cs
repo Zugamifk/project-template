@@ -1,3 +1,4 @@
+using Demo;
 using UnityEngine;
 
 public class StartDemo : ICommand
@@ -9,5 +10,7 @@ public class StartDemo : ICommand
         Game.Do(new SpawnCube());
         Game.Do(new SpawnCube());
         Game.Do(new SpawnCube());
+
+        Game.Do(new ShowNextMessage());
     }
 }

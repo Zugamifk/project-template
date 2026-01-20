@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIModel : IUIModel
 {
-    public Binding<string> CurrentOpenWindow { get; } = new();
-    IBinding<string> IUIModel.CurrentOpenWindow => CurrentOpenWindow;
+    public int CurrentMessageIndex { get; set; } = -1;
+    public Binding<string> CurrentMessage { get; } = new();
+    IBinding<string> IUIModel.CurrentMessage => CurrentMessage;
 }

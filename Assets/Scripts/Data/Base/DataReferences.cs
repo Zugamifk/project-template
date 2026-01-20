@@ -13,6 +13,11 @@ public sealed class DataReferences : ScriptableObject
 
     private void OnEnable()
     {
+        //if(!Application.isPlaying)
+        //{
+        //    return;
+        //}
+
         foreach(var r in _references)
         {
             DataService.Register(r);

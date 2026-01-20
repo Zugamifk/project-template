@@ -3,9 +3,9 @@
   <Project Path="View.csproj" />
   <Project Path="ViewModel.csproj" />
   <Project Path="Game.csproj" />
+  <Project Path="Data.csproj" />
   <Project Path="Core.Attributes.Editor.csproj" />
   <Project Path="SpriteAnimation-Simple.Editor.csproj" />
-  <Project Path="Data.csproj" />
   <Project Path="Model.csproj" />
   <Project Path="Services.csproj" />
   <Project Path="AnimationGenerator.csproj" />
@@ -15,6 +15,5 @@
   <Project Path="SpriteAnimation-Simple.csproj" />
   <Project Path="SpriteAnimation.csproj" />
   <Project Path="Core.Editor.csproj" />
-  <Project Path="Demo.csproj" />
   <Project Path="View.Editor.csproj" />
 </Solution>
